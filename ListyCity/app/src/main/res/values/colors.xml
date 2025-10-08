@@ -3,6 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="regular_button">#FF673AB7</color>
-    <color name="selected_button">#FF7100FF</color>
+    <color name="selected_button">#FF08E622</color>
     <color name="gray"> #FF999999 </color>
 </resources>

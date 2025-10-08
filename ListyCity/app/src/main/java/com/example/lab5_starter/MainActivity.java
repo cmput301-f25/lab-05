@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements CityDialogFragmen
                 readyToDelete = false;
                 stagedToDelete = -1;
                 confirmDeleteButton.hide();
+                deleteCityButton.setBackgroundColor(getResources().getColor(R.color.regular_button));
                 cityListView.setBackgroundColor(Color.WHITE);
             }
         });
@@ -146,9 +147,16 @@ public class MainActivity extends AppCompatActivity implements CityDialogFragmen
 
     @Override
     public void updateCity(City city, String title, String year) {
+        DocumentReference docRef = citiesRef.document(city.getName());
+        docRef.delete();
+
+        DocumentReference docRef_2 = citiesRef.document(title);
+
         city.setName(title);
         city.setProvince(year);
         cityArrayAdapter.notifyDataSetChanged();
+
+        docRef_2.set(city);
 
         // Updating the database using delete + addition
     }
