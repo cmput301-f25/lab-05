@@ -2,11 +2,11 @@
 
 ## Student Details
 
-- **Full Name:** `<Enter name>`
-- **CCID:** `<Enter ccid>`
+- **Full Name:** `<Aaryan Muku>`
+- **CCID:** `<Amuku>`
 
 ## References and Resources
-
+Stackoverflow and Open AI for import problems.
 List any resources used here, or simply put `N/A` if not applicable.
 
 ## Verbal Collaboration
