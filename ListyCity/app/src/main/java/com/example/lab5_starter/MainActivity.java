@@ -72,18 +72,21 @@ public class MainActivity extends AppCompatActivity implements CityDialogFragmen
             cityDialogFragment.show(getSupportFragmentManager(),"City Details");
         });
 
+        // this selects and highlights the city to be deleted
         cityListView.setOnItemClickListener((adapterView, view, i, l) -> {
             if (selectedView != null) {
                 selectedView.setBackgroundColor(Color.TRANSPARENT);
             }
             selectedCity = cityArrayList.get(i);
             selectedView = view;
-            view.setBackgroundColor(Color.LTGRAY);
+//            view.setBackgroundColor(Color.LTGRAY);
+            view.setBackgroundColor(Color.parseColor("#CD5C5C"));
         });
+
 
         deleteCityButton.setOnClickListener(v -> {
             if (selectedCity != null) {
-                citiesRef.document(selectedCity.getName()).delete();
+                citiesRef.document(selectedCity.getName()).delete(); // deletes from Firebase
                 Toast.makeText(this, "Deleting " + selectedCity.getName() + "...", Toast.LENGTH_SHORT).show();
                 selectedCity = null;
                 selectedView = null;
